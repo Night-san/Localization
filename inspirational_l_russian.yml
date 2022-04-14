@@ -1,4 +1,5 @@
-﻿l_russian:
+l_russian:
+#Traits
  trait_inspirational_blacksmith:0 "Кузнец"
  trait_inspirational_goldsmith:0 "Ювелир"
  trait_inspirational_artisan:0 "Ремесленник"
@@ -63,3 +64,55 @@
  has_inspirational_lifestyle_rank_1:0 "Имеет Начальную профессиональную особенность"
  has_inspirational_lifestyle_rank_2:0 "Имеет Искусную профессиональную особенность"
  has_inspirational_lifestyle_rank_3:0 "Имеет Прославленную профессиональную особенность"
+ signet_ring_exclusivity:0 ""
+
+#Events
+ fund_inspiration.0071.jewelry:0 "Ювелирное украшение, чтобы показать мое богатство."
+ fund_inspiration.0073.necklace:0 "Восхитительное ожерелье."
+ fund_inspiration.0073.ring:0 "Роскошное кольцо."
+ inspirational.0002.t:0 "$fund_inspiration.title$ Секреты кольца"
+ inspirational.0002.desc:0 "Однажды, [inspiration_owner.Custom2('MyCharacterIntroduction', ROOT.Char)] тихо подходит ко мне и просит поговорить со мной наедине.\n\n"Мой  [ROOT.Char.GetLadyLord], правители использовали шифры для обеспечения секретности в течение сотен лет. У меня есть идея, которая позволила бы вам легко кодировать и декодировать сообщения с помощью инструмента, скрытого на виду.""
+ inspirational.0002.a:0 "Интригующая идея."
+ inspirational.0002.b:0 "Сосредоточьтесь на мастерстве, а не на уловках."
+ inspirational.0002.decoder.tt:0 "[artifact|E] созданный с помощью [inspiration_owner.GetShortUINamePossessive|U] [inspiration.GetName] будет иметь модификаторы, связанные со схемами, вместо модификаторов притяжения."
+ inspirational.0003.t:0 "$fund_inspiration.title$ Характерный Вид"
+ inspirational.0003.desc:0 "Во время одной из многочисленных встреч по дизайну с  [inspiration_owner.Custom2('MyCharacterIntroduction', ROOT.Char)], [inspiration_owner.GetSheHe]  подходит ко мне.\n\n"My [ROOT.Char.GetLadyLord], я не мог не заметить, что у вас нет кольца с печаткой вашего дома. Я мог бы создать такое кольцо и нанести на него герб вашего дома вместе с любым дополнительным украшением, которое вам понравится.""
+ inspirational.0003.a:0 "Замечательная идея, красивая и практичная."
+ inspirational.0003.b:0 "В этом нет необходимости, моя печать уже хорошо распознана."
+ inspirational.0003.signet.tt:0 "[artifact|E] созданный с помощью [inspiration_owner.GetShortUINamePossessive|U] [inspiration.GetName] будет иметь сильные модификаторы, связанные с домом, вместо модификаторов привлекательности."
+
+#Inspiration
+ inspiration_smith_type_jewelry:0 "ювелирное изделие"
+ inspiration_smith_type_ring:0 "кольцо"
+ inspiration_smith_type_necklace:0 "ожерелье"
+
+#Artifact
+
+ artifact_necklace_name:1 "[SCOPE.Custom( 'ArtifactPrefixGeneric' )|U] [newly_created_artifact.GetFeatureText( 'decoration_material_gem' )|U] [newly_created_artifact.GetFeatureText( 'decoration_material_wire' )|U] Ожерелье"
+
+ #Ring
+    artifact_ring:0 "Кольцо"
+    artifact_ring_name:0 "[SCOPE.Custom( 'ArtifactPrefixGeneric' )|U] [newly_created_artifact.Custom( 'InspirationalArtifactRingName' )]"
+    artifact_ring_default_name:0 "[ROOT.Artifact.GetFeatureText( 'decoration_material_wire' )|U] [ROOT.Artifact.GetFeatureText( 'decoration_material_gem' )|U] Кольцо"
+    artifact_ring_plain_name:0 "[ROOT.Artifact.GetFeatureText( 'decoration_material_wire' )|U] Кольцо"
+    artifact_ring_house_signet_name:0 "[newly_created_artifact.GetOwner.GetHouse.GetBaseName|U] Кольцо с печаткой"
+    artifact_ring_decoder_name:0 "[ROOT.Artifact.GetFeatureText( 'decoration_material_wire' )|U] Кольцо расшифровщика"
+
+    artifact_ring_description:0 "[Artifact.GetFeatureText( 'ring_decoration' )]"
+    artifact_ring_plain_description:0 "[SCOPE.Custom('ArtifactArticleWealth')] кольцо из [SCOPE.Custom('ArtifactQuality')] мастерство. Кольцо имеет [newly_created_artifact.GetFeatureText( 'decoration_material_wire' )] группу."
+    artifact_ring_centerpiece_description:0 "[SCOPE.Custom('ArtifactArticleWealth')] кольцо из [SCOPE.Custom('ArtifactQuality')] мастерство. В центре кольца расположены [newly_created_artifact.GetFeatureText( 'ring_centerpiece' )]. Кольцо имеет [newly_created_artifact.GetFeatureText( 'decoration_material_wire' )] группы."
+    artifact_ring_centerpiece_adornment_description:0 "[SCOPE.Custom('ArtifactArticleWealth')] кольцо из [SCOPE.Custom('ArtifactQuality')] мастерство. В центре кольца расположены [newly_created_artifact.GetFeatureText( 'ring_centerpiece' )]. [newly_created_artifact.GetFeatureText( 'decoration_material_wire' )] кайма украшена [newly_created_artifact.GetFeatureText( 'ring_adornment' )]."
+    artifact_ring_adornment_description:0 "[SCOPE.Custom('ArtifactArticleWealth')] кольцо из [SCOPE.Custom('ArtifactQuality')] мастерство.[newly_created_artifact.GetFeatureText( 'decoration_material_wire' )] кайма украшена [newly_created_artifact.GetFeatureText( 'ring_adornment' )]."
+
+  #Artifact features
+    feature_ring_centerpiece_signet:0 "геральдическое оформление Дома [Artifact.GetOwner.GetHouse.GetBaseName|U]"
+    feature_ring_centerpiece_decoder:0 "два вращающихся диска с буквами из [Artifact.GetOwner.GetCulture.GetLanguage.GetNameNoTooltip] языка"
+    feature_ring_centerpiece_cabochon:0 "[Artifact.GetFeatureText( 'decoration_material_gem' )] кабошон"
+    feature_ring_centerpiece_cameo:0 "камея, вырезанная на большом [Artifact.GetFeatureText( 'decoration_material_gem' )]"
+    feature_ring_adornment_gems:0 "маленький [Artifact.GetFeatureText( 'decoration_material_gem' )] драгоценные камни, идущие вдоль внешней"
+    feature_ring_adornment_filigree:0 "замысловатая филигрань по внешней стороне"
+    feature_ring_adornment_runes:0 "резные руны, сбегающие по бокам"
+    feature_ring_decoration_none:0 "[SCOPE.Custom('ArtifactArticleWealth')] кольцо из [SCOPE.Custom('ArtifactQuality')] мастерство. Кольцо имеет [ROOT.Artifact.GetFeatureText( 'decoration_material_wire' )] группы."
+    feature_ring_decoration_adornment:0 "[SCOPE.Custom('ArtifactArticleWealth')] кольцо из [SCOPE.Custom('ArtifactQuality')] мастерство. [ROOT.Artifact.GetFeatureText( 'decoration_material_wire' )] кайма украшена [ROOT.Artifact.GetFeatureText( 'ring_adornment' )]."
+    feature_ring_decoration_centerpiece:0 "[SCOPE.Custom('ArtifactArticleWealth')] ring of [SCOPE.Custom('ArtifactQuality')] мастерство. В центре кольца расположены [ROOT.Artifact.GetFeatureText( 'ring_centerpiece' )]. Кольцо имеет [ROOT.Artifact.GetFeatureText( 'decoration_material_wire' )] группы."
+    feature_ring_decoration_centerpiece_and_adornment:0 "[SCOPE.Custom('ArtifactArticleWealth')] кольцо из [SCOPE.Custom('ArtifactQuality')] мастерство. В центре кольца расположены [ROOT.Artifact.GetFeatureText( 'ring_centerpiece' )]. [ROOT.Artifact.GetFeatureText( 'decoration_material_wire' )] кайма украшена [ROOT.Artifact.GetFeatureText( 'ring_adornment' )]."
